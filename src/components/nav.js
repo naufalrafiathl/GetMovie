@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { RiMovie2Fill } from 'react-icons/ri'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from './Button'
 import './Navbar.css'
 
@@ -21,8 +21,15 @@ function Navbar() {
             setButton(true)
         }
     }
-
     window.addEventListener('resize', showButton)
+
+    const movies = [
+        {},
+        {},
+        {},
+    ]
+
+   
 
     return (
         <>
@@ -69,7 +76,7 @@ function Navbar() {
             <h1 className="title-hero">GetMovie</h1>
                     <p className="hero-desc">Get movies details, save to your liked page, or add it to bookmark</p>
                     <div className="btn-homepg">
-                    <Link >
+                    <Link to='/'>
                     <Button buttonColor="red" buttonSize="btn--wide" >SEARCH NOW</Button>
                     </Link>
                     </div>
