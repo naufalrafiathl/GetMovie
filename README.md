@@ -1,5 +1,5 @@
 # MovieGet Project
-for RISTEK applications on WEBDEV divisions
+for RISTEK applications on WEBDEV division
 
 features:
 - Search for movies 
