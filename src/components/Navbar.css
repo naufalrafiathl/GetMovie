@@ -201,7 +201,7 @@
     .search-container {
         background-color: #2b2e4a;
         width: auto;
-        height: 700px;
+        height: auto;
     }
     .search-title {
         padding-top: 5rem;
@@ -230,4 +230,41 @@
         text-align: center;
         width: 50%;
         height: 50px;
+    }
+.show-contentcard {
+            display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        justify-content: center;
+    }
+    
+    .card-movie{
+        justify-content: center;
+        padding: 2rem;
+        width: 400px;
+        text-align: center;
+    }
+
+    .movie-title {
+        padding-top: 0.5rem;
+        color: #e84545;
+        height: 50px;
+        
+    }
+
+    .movie-image {
+        display: block;
+        width: auto;
+        align-items: center;
+        justify-content:center,
+    }
+    
+    .rating-movie {
+        color: #fff;
+        font-size: 1rem;
+    }
+    .card-info {
+        width: 354;
+        background-color: #53354a;
+        height: 100px;
     }

@@ -2,12 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { RiMovie2Fill } from 'react-icons/ri'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from './Button'
 import './Navbar.css'
 
 function Navbar() {
+    const moviestest = ['1', '2', '3']
 
+    const landing_api = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=694f210a11567b3472a88c95b053d7e7&page=1";
+    const img_api = "https://image.tmdb.org/t/p/w342";
+    const search_api = "https://api.themoviedb.org/3/discover/search/movie?&api_key=694f210a11567b3472a88c95b053d7e7&query=";
     const [click,setClick] = useState(false)
     const btnClick = () => setClick(!click)
 
@@ -22,6 +26,18 @@ function Navbar() {
         }
     }
     window.addEventListener('resize', showButton)
+
+    useEffect(() => {
+        fetch(landing_api).then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setMovies(data.results)
+        })
+
+    }, []);
+
+
+    const [movies, setMovies] = useState([]);
 
     return (
         <>
@@ -83,7 +99,19 @@ function Navbar() {
                     <input className="input-box" type="text" name="query" placeholder="i.e IRON MAN"/>
                     </div>
                 </form>
+                <div className="show-contentcard">
+                    {movies.map(movies => (
+                        <div key={movies.id} className="card-movie">
+                            <img className="movie-image" src={img_api+ movies.poster_path} alt={movies.title}/>
+                        <div className="card-info">
+                            <h2 className="movie-title">{movies.title}</h2>
+                            <span className="rating-movie">{movies.vote_average} Rated</span>
+                        </div>
+                        </div>
+                    ))}
+                </div>
             </div>
+            
             
         </>
     )
