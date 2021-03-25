@@ -23,14 +23,6 @@ function Navbar() {
     }
     window.addEventListener('resize', showButton)
 
-    const movies = [
-        {},
-        {},
-        {},
-    ]
-
-   
-
     return (
         <>
             <div className="navbar">
@@ -60,13 +52,13 @@ function Navbar() {
                         </li>
                         <li className="nav-btn">
                             {button ? (
-                                <Link to='/donate' className="btn-link">
-                                    <Button buttonStyle='btn--outline'>DONATE</Button>
-                                </Link>
+                                <a href='https://themoviedb.org/' className="btn-link tmdb" >
+                                    <Button buttonStyle='btn--outline'>Powered by TMDB</Button>
+                                </a>
                             ): (
-                                <Link to='/donate' className="btn-link" onClick={closeMobileMenu}>
-                                    <Button buttonStyle='btn--outline' buttonSize='btn--wide'>DONATE</Button>
-                                </Link>
+                                <a href='https://themoviedb.org/' className="btn-link" onClick={closeMobileMenu}>
+                                    <Button buttonStyle='btn--outline' buttonSize='btn--wide'>Powered by TMDB</Button>
+                                </a>
                             )}
                         </li>
                     </ul>
