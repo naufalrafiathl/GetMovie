@@ -284,9 +284,11 @@
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         display: block;
-        width: auto;
+        width: 336px;
+        max-width: 336px;
         align-items: center;
         justify-content:center;
+        height: 500px;
         
         
     }

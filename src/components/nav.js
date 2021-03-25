@@ -131,7 +131,7 @@ function Navbar() {
                                 <p>{movies.overview}</p>
                             </div>
                             
-                            <img className="movie-image" src={img_api+ movies.poster_path} alt={movies.title}/>
+                            <img className="movie-image" src={movies.poster_path ? (img_api+ movies.poster_path) : 'https://image.winudf.com/v2/image/YXBwaW52ZW50b3IuYWlfY3VybHlrYXk5MTYubm90ZXh0d2hpbGVkcml2aW5nX3NjcmVlbl8xX2VraWs5ZjMy/screen-1.jpg?fakeurl=1&type=.jpg'} alt={movies.title} />
                         </div>
                         <div className="card-info">
                             <h2 className="movie-title">{movies.title}</h2>
