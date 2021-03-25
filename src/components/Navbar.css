@@ -230,8 +230,9 @@
         text-align: center;
         width: 50%;
         height: 50px;
+        border-radius: 3rem;
     }
-.show-contentcard {
+    .show-contentcard {
         display: flex;
         flex-wrap: wrap;
         width: auto;
@@ -242,6 +243,7 @@
     .card-movie{
         justify-content: center;
         padding: 2rem;
+        padding-bottom: 0;
         width: 400px;
         text-align: center;
     }
@@ -253,10 +255,14 @@
     }
 
     .movie-image {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
         display: block;
         width: auto;
         align-items: center;
-        justify-content:center,
+        justify-content:center;
+        
+        
     }
     
     .rating-movie {
@@ -266,9 +272,12 @@
         padding-top: 1rem;
     }
     .card-info {
-        width: 342px;
+        width: 336px;
         background-color: #53354a;
         height: 100px;
+        overflow: hidden;
+        position: relative;
+
         
     }
     .like-btn {
@@ -282,13 +291,42 @@
     }
 
     .container-like {
-        width: 342px;
+        width: 336px;
         background-color: #53354a;
         height: 50px;
     }
 
     .container-bm {
-        width: 342px;
+        width: 336px;
         background-color: #53354a;
         height:60px;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .overview-container {
+      background-color: #fff;
+      position: absolute;
+      width: auto;
+      text-align: justify;
+      padding: 1rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .img-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .img-container:hover .overview-container {
+      transform: translateY(0%);
+      background-color:whitesmoke;
+      color:black;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+
+      
     }

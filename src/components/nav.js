@@ -9,12 +9,13 @@ import './Navbar.css'
 function Navbar() {
     const moviestest = ['1', '2', '3']
 
+    const [SQuery, setSQuery] = useState('');
+
     const landing_api = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=694f210a11567b3472a88c95b053d7e7&page=1";
     const img_api = "https://image.tmdb.org/t/p/w342";
-    const search_api = "https://api.themoviedb.org/3/discover/search/movie?&api_key=694f210a11567b3472a88c95b053d7e7&query=";
+    const search_api = "https://api.themoviedb.org/3/search/movie?api_key=694f210a11567b3472a88c95b053d7e7&query=";
     const [click,setClick] = useState(false)
     const btnClick = () => setClick(!click)
-
     const [button, setButton] = useState(true);
     const closeMobileMenu= () => setClick(false);
 
@@ -38,6 +39,24 @@ function Navbar() {
 
 
     const [movies, setMovies] = useState([]);
+
+
+
+    const handlesubmit = (e) => {
+        e.preventDefault();
+
+        console.log(SQuery)
+        fetch(search_api + SQuery).then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setMovies(data.results)
+        })
+
+    }
+
+    const handleonchange = (e) => {
+        setSQuery(e.target.value);
+    }
 
     return (
         <>
@@ -94,32 +113,39 @@ function Navbar() {
                 <h1 className="search-title">
                     SEARCH MOVIE :
                 </h1>
-                <form className="form-search" action="" className="search-form">
+                <form onSubmit={handlesubmit} className="form-search" action="" className="search-form">
                     <div className="input-search" >
-                    <input className="input-box" type="text" name="query" placeholder="i.e IRON MAN"/>
+                        <input className="input-box" type="text" name="query" placeholder="i.e IRON MAN" value={SQuery}
+                        onChange={handleonchange}/>
                     </div>
                 </form>
                 <div className="show-contentcard">
-
                     {movies.map(movies => (
-<>
-                        
-                        <div key={movies.id} className="card-movie">
+                <>     
+                    <div key={movies.id} className="card-movie">
+                        <div className="img-container">
+                            <div className="overview-container">
+                                <h2>Overview:</h2>
+                                <p>{movies.overview}</p>
+                            </div>
                             <img className="movie-image" src={img_api+ movies.poster_path} alt={movies.title}/>
+                        </div>
                         <div className="card-info">
                             <h2 className="movie-title">{movies.title}</h2>
                             <span className="rating-movie">{movies.vote_average} Rated</span>
                         </div>
                         <div className="container-like">
-                        <Button className="like-btn" buttonColor="red" buttonSize="btn--small">Add to liked page</Button>
+                            <Button className="like-btn" buttonColor="red" buttonSize="btn--small">Add to liked page</Button>
                         </div>
                         <div className="container-bm">
-                        <Button className="like-btn" buttonColor="blue" buttonSize="btn--small">Add to bookmarks</Button>
+                            <Button className="like-btn" buttonColor="blue" buttonSize="btn--small">Add to bookmarks</Button>
                         </div>
-                        </div>
-                        </>
+                    </div>
+                </>
                     ))}
                 </div>
+
+
             </div>
             
             
