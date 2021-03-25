@@ -100,14 +100,24 @@ function Navbar() {
                     </div>
                 </form>
                 <div className="show-contentcard">
+
                     {movies.map(movies => (
+<>
+                        
                         <div key={movies.id} className="card-movie">
                             <img className="movie-image" src={img_api+ movies.poster_path} alt={movies.title}/>
                         <div className="card-info">
                             <h2 className="movie-title">{movies.title}</h2>
                             <span className="rating-movie">{movies.vote_average} Rated</span>
                         </div>
+                        <div className="container-like">
+                        <Button className="like-btn" buttonColor="red" buttonSize="btn--small">Add to liked page</Button>
                         </div>
+                        <div className="container-bm">
+                        <Button className="like-btn" buttonColor="blue" buttonSize="btn--small">Add to bookmarks</Button>
+                        </div>
+                        </div>
+                        </>
                     ))}
                 </div>
             </div>

@@ -232,9 +232,10 @@
         height: 50px;
     }
 .show-contentcard {
-            display: flex;
+        display: flex;
         flex-wrap: wrap;
         width: auto;
+        padding: 3rem;
         justify-content: center;
     }
     
@@ -248,7 +249,6 @@
     .movie-title {
         padding-top: 0.5rem;
         color: #e84545;
-        height: 50px;
         
     }
 
@@ -262,9 +262,33 @@
     .rating-movie {
         color: #fff;
         font-size: 1rem;
+
+        padding-top: 1rem;
     }
     .card-info {
-        width: 354;
+        width: 342px;
         background-color: #53354a;
         height: 100px;
+        
+    }
+    .like-btn {
+        color: black;
+        width: 100px;
+        height: 25px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        color: #e84545;
+        justify-content: space-evenly;
+    }
+
+    .container-like {
+        width: 342px;
+        background-color: #53354a;
+        height: 50px;
+    }
+
+    .container-bm {
+        width: 342px;
+        background-color: #53354a;
+        height:60px;
     }
