@@ -7,7 +7,6 @@ import { Button } from './Button'
 import './Navbar.css'
 
 function Navbar() {
-    const moviestest = ['1', '2', '3']
 
     const [SQuery, setSQuery] = useState('');
 
@@ -57,6 +56,7 @@ function Navbar() {
     const handleonchange = (e) => {
         setSQuery(e.target.value);
     }
+
 
     return (
         <>
@@ -122,12 +122,15 @@ function Navbar() {
                 <div className="show-contentcard">
                     {movies.map(movies => (
                 <>     
+  
+                    
                     <div key={movies.id} className="card-movie">
                         <div className="img-container">
                             <div className="overview-container">
                                 <h2>Overview:</h2>
                                 <p>{movies.overview}</p>
                             </div>
+                            
                             <img className="movie-image" src={img_api+ movies.poster_path} alt={movies.title}/>
                         </div>
                         <div className="card-info">

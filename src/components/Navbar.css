@@ -160,7 +160,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     }
+
    .title-hero {
+      font-family: 'Bree Serif', serif;
        padding-top: 4rem;
        text-shadow: 10px 10px #2b2e4a;
        font-size: 7rem;
@@ -181,6 +183,7 @@
         }
       }
     .hero-desc {
+        font-family: 'Bree Serif', serif;
         padding-left: 3rem;
         padding-right: 3rem;
         padding-bottom: 0;
@@ -191,6 +194,29 @@
         text-align: center;
         color: #ffffff;
     }
+
+    @media only screen and (max-width: 400px) {
+      .title-hero {
+        font-size: 4rem;
+        text-shadow: 7px 7px #2b2e4a;
+        text-align: center;
+        justify-content: center;
+        transition: all 0.3s ease-in;
+      }
+    }
+  .hero-desc {
+      font-family: 'Bree Serif', serif;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-bottom: 0;
+      text-shadow: 5px 5px #2b2e4a;
+      justify-content: center;
+      width: auto;
+      font-size: 2rem;
+      text-align: center;
+      color: #ffffff;
+  }
+
 
 
     .btn-homepg {
