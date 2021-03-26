@@ -8,7 +8,7 @@ function Bookmark() {
         <>
           <Navbar/>
           <div className="container--page">
-            <h1>Here's a list of your bookmark:</h1>
+            <h1>Here's a list of your bookmarks:</h1>
           </div>
         </>
     )

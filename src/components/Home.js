@@ -86,10 +86,10 @@ function Home() {
                             <span className="rating-movie">{movies.vote_average} Rated</span>
                         </div>
                         <div className="container-like">
-                            <Button className="like-btn" buttonColor="red" buttonSize="btn--small">Add to liked page</Button>
+                            <Button className="like-btn" buttonColor="red" buttonSize="btn--small" value={movies.id}>Add to liked page</Button>
                         </div>
                         <div className="container-bm">
-                            <Button className="like-btn" buttonColor="blue" buttonSize="btn--small">Add to bookmarks</Button>
+                            <Button className="like-btn" buttonColor="blue" buttonSize="btn--small" value={movies.id}>Add to bookmarks</Button>
                         </div>
                     </div>
                 </>
