@@ -362,6 +362,17 @@
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
+    .container--page {
+      text-align: center;
+      background-color: #2b2e4a;
+      width: 100%;
+      height: 900px;
+      padding-top: 5rem;
+      font-size: large;
+      color: #e84545;
+      font-weight: bolder;
+  }
+  
 
     .overview-container {
       background-color: #fff;

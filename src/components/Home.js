@@ -47,9 +47,7 @@ function Home() {
     }
 
 
-    const {addMovieToLikes, likes} = useContext(GlobalContext)
-
-
+    const {addMovieToLikes, likes, addMovieToBookmarks} = useContext(GlobalContext)
 
 
 
@@ -101,7 +99,7 @@ function Home() {
                         </div>
                         <div className="container-bm">
                         <Link to="/bookmark">
-                            <Button className="like-btn" buttonColor="blue" buttonSize="btn--small" value={movies.id}>Add to bookmarks</Button>
+                            <Button onClick={() => addMovieToBookmarks(movies)}  className="like-btn" buttonColor="blue" buttonSize="btn--small" value={movies.id}>Add to bookmarks</Button>
                         </Link> 
                         </div>
                     </div>
