@@ -258,6 +258,13 @@
         height: 50px;
         border-radius: 3rem;
     }
+
+    .input-box:focus {
+      outline: none;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
     .show-contentcard {
         display: flex;
         flex-wrap: wrap;
