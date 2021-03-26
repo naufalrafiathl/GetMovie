@@ -9,3 +9,15 @@
 html {
   background-color: #2b2e4a;
 }
+
+footer {
+  background-color: #3c415c;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  color: whitesmoke;
+  font-weight: bolder;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+}

@@ -350,6 +350,7 @@
     .add-more {
       background-color: #2b2e4a;
       width: auto;
+      height: 200px;
       padding: 3rem;
     }
 

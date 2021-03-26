@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Likes from './components/Likes';
 import Bookmark from './components/Bookmark'
 import {GlobalProvider} from "./context/GlobalState"
+import Footer from "./components/Footer"
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/likes" component={Likes}/>
       <Route path="/bookmark" component={Bookmark}/>
     </Switch>
+      <Footer></Footer>
     </Router>
     </GlobalProvider>
     </>
