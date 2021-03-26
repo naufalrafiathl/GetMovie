@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useEffect, useState } from "react";
 import { Button } from './Button'
 import './Home.css'
 import { Link as Linkz } from "react-scroll"
 import Navbar from "./Navbar"
+import {GlobalContext} from "../context/GlobalState"
+import { Link } from 'react-router-dom'
+
+
 
 function Home() {
 
@@ -27,13 +31,12 @@ function Home() {
 
 
 
+
     const handlesubmit = (e) => {
         e.preventDefault();
 
-        console.log(SQuery)
         fetch(search_api + SQuery).then(res => res.json())
         .then(data => {
-            console.log(data)
             setMovies(data.results)
         })
 
@@ -42,6 +45,12 @@ function Home() {
     const handleonchange = (e) => {
         setSQuery(e.target.value);
     }
+
+
+    const {addMovieToLikes, likes} = useContext(GlobalContext)
+
+
+
 
 
     return (
@@ -86,15 +95,20 @@ function Home() {
                             <span className="rating-movie">{movies.vote_average} Rated</span>
                         </div>
                         <div className="container-like">
-                            <Button className="like-btn" buttonColor="red" buttonSize="btn--small" value={movies.id}>Add to liked page</Button>
+                    <Link to="/likes">
+                    <Button  onClick={() => addMovieToLikes(movies)} className="like-btn" buttonColor="red" buttonSize="btn--small" value={movies.id}>Add to liked page</Button>
+                    </Link>
                         </div>
                         <div className="container-bm">
+                        <Link to="/bookmark">
                             <Button className="like-btn" buttonColor="blue" buttonSize="btn--small" value={movies.id}>Add to bookmarks</Button>
+                        </Link> 
                         </div>
                     </div>
                 </>
                     ))}
                 </div>
+                
 
 
             </div>

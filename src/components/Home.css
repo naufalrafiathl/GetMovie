@@ -331,10 +331,34 @@
         height: 50px;
     }
 
+    .container-like-page{
+      width: 336px;
+      background-color: #53354a;
+      height: 70px;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
     .container-bm {
         width: 336px;
         background-color: #53354a;
         height:60px;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .add-more {
+      background-color: #2b2e4a;
+      width: auto;
+      padding: 3rem;
+    }
+
+    .card-info-page {
+        width: 336px;
+        background-color: #53354a;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }

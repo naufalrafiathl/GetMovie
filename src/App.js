@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Likes from './components/Likes';
 import Bookmark from './components/Bookmark'
-
+import {GlobalProvider} from "./context/GlobalState"
 function App() {
 
   return (
     <>
+    <GlobalProvider>
     <Router>
     <Switch>
       <Route exact path="/" component={Home}/>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/bookmark" component={Bookmark}/>
     </Switch>
     </Router>
+    </GlobalProvider>
     </>
  
   );
