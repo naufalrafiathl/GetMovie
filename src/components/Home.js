@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 function Home() {
 
     const [SQuery, setSQuery] = useState('');
+    const [owned, setOwned] = useState([]);
 
     const landing_api = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=694f210a11567b3472a88c95b053d7e7&page=1";
     const img_api = "https://image.tmdb.org/t/p/w342";
@@ -20,7 +21,6 @@ function Home() {
     useEffect(() => {
         fetch(landing_api).then(res => res.json())
         .then(data => {
-            console.log(data)
             setMovies(data.results)
         })
 
@@ -47,7 +47,23 @@ function Home() {
     }
 
 
+
     const {addMovieToLikes, likes, addMovieToBookmarks} = useContext(GlobalContext)
+
+
+   var test1 = JSON.parse(localStorage.getItem('likes'))
+   var test2 = JSON.parse(localStorage.getItem('bookmarks'))
+ 
+   const op = movies.map(m => m.id)
+   const op1 = test1 ? test1.map(m =>m.id):[]
+   const op2 = test2 ? test2.map(m =>m.id):[]
+   
+
+    console.log(movies)
+    console.log(test1)
+    console.log(movies.filter(ar => !test1.find(rm => (rm.id === ar.id) )))
+    const tempar = movies.filter(ar => !test1.find(rm => (rm.id === ar.id) ));
+    const finalar = tempar.filter(ar => !test2.find(rm => (rm.id === ar.id) ));
 
 
 
@@ -75,7 +91,7 @@ function Home() {
                     </div>
                 </form>
                 <div className="show-contentcard">
-                    {movies.map(movies => (
+                    {finalar.map(movies => (
                 <>     
   
                     
