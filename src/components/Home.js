@@ -58,10 +58,6 @@ function Home() {
    const op1 = test1 ? test1.map(m =>m.id):[]
    const op2 = test2 ? test2.map(m =>m.id):[]
    
-
-    console.log(movies)
-    console.log(test1)
-    console.log(movies.filter(ar => !test1.find(rm => (rm.id === ar.id) )))
     const tempar = movies.filter(ar => !test1.find(rm => (rm.id === ar.id) ));
     const finalar = tempar.filter(ar => !test2.find(rm => (rm.id === ar.id) ));
 

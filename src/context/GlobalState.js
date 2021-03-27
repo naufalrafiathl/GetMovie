@@ -26,11 +26,20 @@ export const GlobalProvider = (props) => {
         dispatch({type: "ADD_MOVIE_TO_BOOKMARKS", payload: movies })
     }
 
+    const removeMovieFromLikes = (id) => {
+        dispatch({type: "REMOVE_MOVIE_FROM_LIKES", payload: id})
+    }
+    const removeMovieFromBm = (id) => {
+        dispatch({type: "REMOVE_MOVIE_FROM_BOOKMARKS", payload: id})
+    }
+
     return (
         <GlobalContext.Provider value={{ likes: state.likes, 
                                        bookmarks:state.bookmarks, 
                                        addMovieToLikes,
-                                       addMovieToBookmarks }}>
+                                       addMovieToBookmarks,
+                                       removeMovieFromLikes,
+                                       removeMovieFromBm, }}>
             {props.children}
         </GlobalContext.Provider>
     )

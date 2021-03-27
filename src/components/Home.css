@@ -283,6 +283,7 @@
 
     .movie-title {
         padding-top: 1.5rem;
+        padding-bottom: 1rem;
         color: #e84545;
         
     }
@@ -357,7 +358,7 @@
     .card-info-page {
         width: 336px;
         background-color: #53354a;
-        height: 100px;
+        height: 150px;
         overflow: hidden;
         position: relative;
         border-bottom-left-radius: 1rem;
@@ -370,7 +371,6 @@
       height: 900px;
       padding-top: 5rem;
       font-size: large;
-      color: #e84545;
       font-weight: bolder;
   }
   
@@ -401,3 +401,11 @@
 
       
     }
+
+    .add-more-btn {
+      padding:1rem;
+    }
+
+    .head-like-bm {
+      color: #e84545;
+  }

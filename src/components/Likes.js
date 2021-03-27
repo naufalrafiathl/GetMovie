@@ -13,11 +13,12 @@ function Likes() {
     const img_api = "https://image.tmdb.org/t/p/w342";
     const {likes} = useContext(GlobalContext)
 
+    const {removeMovieFromLikes} = useContext(GlobalContext)
     return (
         <>
           <Navbar/>
           <div className="container--page">
-            <h1>Here's a list of your liked movies:</h1>
+            <h1 class="head-like-bm">Here's a list of your liked movies:</h1>
             <div className="search-container">
             <div className="show-contentcard">
             {likes.map(movies => (
@@ -35,6 +36,7 @@ function Likes() {
                         </div>
                         <div className="card-info-page">
                             <h2 className="movie-title">{movies.title}</h2>
+                            <Button onClick={()=> removeMovieFromLikes(movies.id)}className="addmore-btn" buttonColor="red" buttonSize="btn--small">REMOVE</Button>
                         </div>
                     </div>
                     

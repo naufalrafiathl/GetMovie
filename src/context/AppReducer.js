@@ -11,6 +11,16 @@ export default (state, action) => {
             bookmarks:[action.payload, ...state.bookmarks],
 
         }
+        case "REMOVE_MOVIE_FROM_LIKES":
+            return {
+                ...state,
+                likes: state.likes.filter(movies=>movies.id!==action.payload)
+            }
+        case "REMOVE_MOVIE_FROM_BOOKMARKS":
+            return {
+                ...state,
+                bookmarks: state.bookmarks.filter(movies=>movies.id!==action.payload)
+            }
         default:
             return state;
     }

@@ -11,12 +11,12 @@ function Bookmark() {
     const img_api = "https://image.tmdb.org/t/p/w342";
     const {bookmarks} = useContext(GlobalContext)
 
-
+    const {removeMovieFromBm} = useContext(GlobalContext)
     return (
         <>
           <Navbar/>
           <div className="container--page">
-            <h1>Here's a list of your bookmarks:</h1>
+            <h1 className="head-like-bm">Here's a list of your bookmarks:</h1>
           <div className="search-container">
             <div className="show-contentcard">
             {bookmarks.map(movies => (
@@ -34,6 +34,7 @@ function Bookmark() {
                         </div>
                         <div className="card-info-page">
                             <h2 className="movie-title">{movies.title}</h2>
+                            <Button onClick={()=> removeMovieFromBm(movies.id)} className="addmore-btn" buttonColor="red" buttonSize="btn--small">REMOVE</Button>
                         </div>
                     </div>
                     
