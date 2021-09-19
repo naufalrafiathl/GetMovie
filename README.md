@@ -13,3 +13,6 @@ LOCAL INSTALLATION:
 4. Type in 'npm ci' to install all the used package, from package-lock.json
 5. Type in npm start.
 6. Go to http://localhost:3000/ on browser.
+
+Site live on:
+https://getmovieapp.netlify.app/
