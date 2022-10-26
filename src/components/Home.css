@@ -173,6 +173,18 @@
        -webkit-text-stroke: #e84545;
     }
 
+    .title-login {
+      font-family: 'Bree Serif', serif;
+       padding-top: 1rem;
+       text-shadow: 10px 10px #2b2e4a;
+       font-size: 7rem;
+       text-align: center;
+       justify-content: center;
+       color: #e84545;
+       width: auto;
+       -webkit-text-stroke: #e84545;
+    }
+
     @media only screen and (max-width: 600px) {
         .title-hero {
           font-size: 5rem;

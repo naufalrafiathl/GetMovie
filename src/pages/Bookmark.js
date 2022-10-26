@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
-import Navbar from './Navbar'
-import './Home.css'
-import './Likes.css'
-import { Button } from './Button'
+import Navbar from '../components/Navbar'
+import '../components/Home.css'
+import '../components/Likes.css'
+import { Button } from '../components/Button'
 import { Link } from 'react-router-dom'
 import {GlobalContext} from '../context/GlobalState'
 function Bookmark() {
